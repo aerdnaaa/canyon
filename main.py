@@ -45,6 +45,7 @@ def main():
     context = ssl.create_default_context()    
     watchlist = ['https://www.canyon.com/en-sg/road-bikes/endurance-bikes/endurace/al/endurace-7-disc/2946.html?dwvar_2946_pv_rahmenfarbe=BK%2FBK', 'https://www.canyon.com/en-sg/road-bikes/endurance-bikes/endurace/cf-sl/endurace-cf-sl-7-disc/2947.html?dwvar_2947_pv_rahmenfarbe=GY%2FBK']
     watchdict = get_bike_name(watchlist)
+    send_email('testing', '', port, context, password)
     while True:
         for title, url in watchdict.items():
             is_available = check_url(url)
